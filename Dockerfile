@@ -119,21 +119,6 @@ RUN yum install -y \
     && yum clean all
 
 
-# Environment variables for swmod and "/user":
-
-ENV \
-    SWMOD_HOSTSPEC="linux-centos-7-x86_64-8f24f4d9" \
-    SWMOD_INST_BASE="/user/.local/sw" \
-    SWMOD_MODPATH="/user/.local/sw" \
-    \
-    PATH="/user/.local/bin:$PATH" \
-    LD_LIBRARY_PATH="/user/.local/lib:$LD_LIBRARY_PATH" \
-    MANPATH="/user/.local/share/man:$MANPATH" \
-    PKG_CONFIG_PATH="/user/.local/lib/pkgconfig:$PKG_CONFIG_PATH" \
-    PYTHONUSERBASE="/user/.local" \
-    PYTHONPATH="/user/.local/lib/python2.7/site-packages:$PYTHONPATH"
-
-
 # Environment variables for MGDO (to be installed in /user):
 
 ENV \
@@ -166,6 +151,11 @@ ENV \
 # Copy MAJORANA software install scripts:
 
 COPY scripts/mj-sw-*.sh /usr/local/bin/
+
+
+# Set container-specific SWMOD_HOSTSPEC:
+
+ENV SWMOD_HOSTSPEC="linux-centos-7-x86_64-aec2b2b4"
 
 
 # Final steps
