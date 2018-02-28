@@ -153,6 +153,15 @@ ENV \
     PATH="/user/mjsw/MJOR:${PATH}"
 
 
+# Environment variables for MaGe (to be installed in /user):
+
+ENV \
+    MAGEDIR="/user/mjsw/MaGe" \
+    PATH="/user/mjsw/MaGe/install/bin:$PATH" \
+    LD_LIBRARY_PATH="/user/mjsw/MaGe/install/lib:$LD_LIBRARY_PATH" \
+    MGGERDAGEOMETRY="/user/mjsw/MaGe/gerdageometry"
+
+
 # Copy MAJORANA software install scripts:
 
 COPY scripts/mj-sw-*.sh /usr/local/bin/

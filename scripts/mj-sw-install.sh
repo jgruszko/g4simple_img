@@ -21,3 +21,11 @@
     cd "$MJORDIR"
     make && echo "MJOR build successfull." >&2
 )
+
+(
+    cd "$MAGEDIR"
+    git checkout g4.10
+    test -f Makefile \
+        || ./configure --prefix="$MAGEDIR/install"
+    make && make install && echo "MaGe installation successfull." >&2
+)
