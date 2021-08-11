@@ -7,9 +7,8 @@ DEFAULT_BUILD_OPTS=""
 
 
 pkg_install() {
-    DOWNLOAD_URL="https://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-${PACKAGE_VERSION}.tgz"
+    DOWNLOAD_URL="https://proj-clhep.web.cern.ch/proj-clhep/dist1/clhep-${PACKAGE_VERSION}.tgz"
     echo "INFO: Download URL: \"${DOWNLOAD_URL}\"." >&2
-
     mkdir src build
     download "${DOWNLOAD_URL}" | tar --strip-components 1 -C src --strip=1 -x -z
     cd build

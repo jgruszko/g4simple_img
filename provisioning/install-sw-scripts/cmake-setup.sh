@@ -12,7 +12,6 @@ pkg_install() {
     PACKAGE_VERSION_SHORT=`echo "${PACKAGE_VERSION}" | cut -d '.' -f 1,2`
     DOWNLOAD_URL="https://cmake.org/files/v${PACKAGE_VERSION_SHORT}/cmake-${PACKAGE_VERSION}-Linux-x86_64.tar.gz"
     echo "INFO: Download URL: \"${DOWNLOAD_URL}\"." >&2
-
     mkdir -p "${INSTALL_PREFIX}"
     download "${DOWNLOAD_URL}" \
         | tar --strip-components=1 -x -z -f - -C "${INSTALL_PREFIX}"
